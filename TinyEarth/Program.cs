@@ -19,12 +19,36 @@ namespace TinyEarth
                 app.UseHsts();
             }
 
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+            // Custom route til /Rules ? HomeController.Rules
+            app.MapControllerRoute(
+                name: "rules",
+                pattern: "Rules",
+                defaults: new { controller = "Home", action = "Rules" });
+
+
+            app.MapControllerRoute(
+                name: "safety",
+                pattern: "Safety",
+                defaults: new { controller = "Home", action = "Safety" });
+
+
+            app.MapControllerRoute(
+                name: "media",
+                pattern: "Media",
+                defaults: new { controller = "Home", action = "Media" });
+
+            app.MapControllerRoute(
+                name: "vote",
+                pattern: "Vote",
+                defaults: new { controller = "Home", action = "Vote" });
 
             app.MapControllerRoute(
                 name: "default",

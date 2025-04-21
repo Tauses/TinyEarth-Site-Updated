@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>TinyEarth - Help</title>
+    <script src="~/js/help.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body onload="pageLoad()">
+    <nav id="navbar">
+        <div class="nav_title">
+            <div class="title">
+                <img src="images/main_logo.png" alt="">
+                <a href="index.html">TinyEarth</a>
+            </div>
+            <p class="help_text">Help Center</p>
+        </div>
+        <ul>
+            <li class="selected_nav_page"><a asp-action="Rules">Rules</a></li>
+            <li><a asp-controller="Home" asp-action="Safety">Safety</a></li>
+            <li><a asp-controller="Home" asp-action="Vote">Vote</a></li>
+            <li><a asp-controller="Home" asp-action="Media">Media</a></li>
+        </ul>
+    </nav>
+    <button class="nav_button" id="nav_button" onclick="toggleNav()">
+        <img src="images/arrow-collapse.png" alt="">
+    </button>
+    <main class="home_help" id="home_help">
+        <div class="home_rule rule_big">
+            <p class="home_header_large">Rules</p>
+            <p class="home_text">
+                Rules are in place to ensure an enjoyable and safe experience for everyone. They can change at any time, and any activity not listed here, but that staff deems harmful to players on the server, can be punishable.<br><br>Playing with rule offenders without reporting them to the staff team may make you complicit.<br>
+                You can report players by creating a ticket in the TinyEarth Discord server by navigating to #new-tickets and clicking the emoji. Provide proof of your accusation.<br><br>
+                If you feel like you have been treated unfairly, make a ticket in the Official TinyEarth Discord server by navigating to #new-tickets and clicking the emoji. Write an in-depth appeal providing context of your situation. If you are banned from the Discord, then you can't make an appeal.
+            </p>
+        </div>
+
+        <div class="home_rule rule_big">
+            <p class="home_header_large">Moderation</p>
+            <p class="home_text">
+                Staff will punish you according to your previous offence history and the severity of your offences.<br>Staff only moderates the TinyEarth Discord server and the TinyEarth Minecraft server, they cannot punish outside of the TinyEarth realm.<br><br>Breaking Discord's guidelines may get you banned from the Discord server, rendering you unable to contact staff in case of a ban appeal or other cases. Targeting players in DM's with advertisements or other forms of harassment from the discord server may result in you being banned from the Discord server.
+            </p>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">1. Safe Place</p>
+            <ul>
+                <li><p>1.1 To keep a positive and safe atmosphere while playing on TinyEarth, please refrain yourself from using slurs.</p></li>
+                <li><p>1.2 While slurs aren't censured, using them against other people and using them excessively, may get you muted or worse.</p></li>
+                <li><p>1.3 It is up to the individual staff member to deem if there's an intolerant atmosphere.</p></li>
+                <li><p>1.4 Creating mapart/pixelart is encouraged, but be sensible with what you create. If your art is deemed inappropriate by staff it will be removed.</p></li>
+                <li><p>1.5 If you have an inappropriate username staff may tell you to change it.</p></li>
+                <li><p>1.6 If you have an inappropriate name for one of your items staff may tell you to change it.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">2. No abusing bugs/exploits that give an advantage</p>
+            <ul>
+                <li><p>2.1 Bugs must be reported to staff privately in a ticket.</p></li>
+                <li><p>2.2 Abusing a broken system is not allowed.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">3. Cheating & Modifications</p>
+            <ul>
+                <li><p>3.1 Using any modifications that allow for the use of aimbot, fly, speedhack or other malicious modifications is not allowed, herein any modifications that grant an unfair advantage is not allowed.</p></li>
+                <li><p>3.2 Minimaps are allowed.</p></li>
+                <li><p>3.3 Lunar & Badlion clients and their mods are allowed with the exception of Inventory sneak.</p></li>
+                <li><p>The only camera mod that is permitted is the perspective mod included in the aforementioned clients.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">4. Language Barriers</p>
+            <ul>
+                <li><p>4.1 To make sure staff can moderate the chat, English is the only language that is allowed to be spoken in the global chats.</p></li>
+                <li><p>4.2 In /tc, /nc, /l and other non-global chats, you are allowed to speak in different languages.</p></li>
+                <li><p>4.3 All channels in Discord are English only.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">5. Privacy</p>
+            <ul>
+                <li><p>5.1 No sharing others personal information. </p></li>
+                <li><p>5.2 Players have a right to not answer any personal questions from anyone.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">6. Advertisements</p>
+            <ul>
+                <li><p>6.1 DM advertisements are not allowed by the Discord TOS, report the users to staff if they're in the TinyEarth Discord. Otherwise, you should report them to discord.</p></li>
+                <li><p>6.2 Using the #nations channel for anything other than a discord server related to TinyEarh is not allowed, and multiple wrong attempts can get you blacklisted from using it.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">7. PVP</p>
+            <ul>
+                <li><p>7.1 Do not kill new players. A new player is someone that joined 2 days ago or less. Use /resident (playername) to see join date.</p></li>
+                <li><p>7.2 If a new player is attacking you, you may defend yourself.</p></li>
+                <li><p>7.3 Being kind to new players is encouraged.</p></li>
+                <li><p>7.4 No nether portal trapping. This means blocking portals in a way where players cant access commands by being stuck in the nether portal.</p></li>
+                <li><p>7.5 Trapping players so they can't get out by either dying or using commands is not allowed.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">8. Griefing</p>
+            <ul>
+                <li><p>8.1 Stealing valuable blocks is allowed. Scroll all the way down for the valuable blocks list.</p></li>
+                <li><p>8.2 Griefing is not allowed.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">9. One User</p>
+            <ul>
+                <li><p>9.1 Each player on TinyEarth is only allowed to have one minecraft user. Alts are not allowed and will be permanently banned. This accounts for both the Minecraft server and Discord server.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">10. Redstone</p>
+            <ul>
+                <li><p>10.1 Creating dupe machines is not allowed.</p></li>
+                <li><p>10.2 Heavy redstone machinery is not allowed.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">11. Griefing in wartime</p>
+            <ul>
+                <li><p>11.1 Siege zones can be rolled back by staff, create a ticket when the siege is over to get it rolled back. You are only eligible for a Siege zone rollback for 3 days after the latest siege. Longer wars may need to keep their defences in the siegezones longer than 3 days, so exceptions can be made.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">12. Spawnkilling</p>
+            <ul>
+                <li><p>12.1 Spawnkilling is not allowed. This means repeatedly killing a player right after they spawn multiple times.</p></li>
+            </ul>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">News Discords</p>
+            <p class="home_text small">News Discords can ask to be linked up with the channel #news on the Official TinyEarth discord, but must abide by the rules set here. To get linked up, create a  normal ticket in  the discord and present an article to us for quality control.  Low effort articles/news discords will be removed.</p>
+            <ul>
+                <li><p>1. It is not allowed to talk badly about the server in the news.</p></li>
+                <li><p>2. It is not allowed to talk badly about a player in the news.</p></li>
+                <li><p>3. Using the #news to talk about stuff such as pushing for a suggestion or a fix is not allowed.</p></li>
+                <li><p>4. Do not advertise things unrelated to TinyEarth.</p></li>
+                <li><p>5. Follow the Rules.</p></li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

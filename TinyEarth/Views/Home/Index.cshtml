@@ -1,8 +1,36 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="icon" href="@Url.Content("/images/favicon.ico")" type="image/x-icon">
+    <script src="~/js/random_background.js"></script>
+    <title>@ViewData["Title"] - TinyEarth</title>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body onload="pageLoad()">
+    <main class="home_main" id="home_main">
+        <div class="title">
+            <img src="images/main_logo.png" alt="TinyEarth Logo">
+            <p>Tiny<span class="">Earth</span></p>
+        </div>
+        <ul class="buttons">
+            <li><a href="https://discord.gg/cs4X4f4bHg" target="_blank">Discord</a></li>
+            <li><a href="https://shop.tiny-earth.com/" target="_blank">Shop</a></li>
+            <li>
+                <a asp-controller="Home" asp-action="Rules">Help</a>
+            </li>
+            <li>
+                <a asp-controller="Home" asp-action="Home">HOME</a>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

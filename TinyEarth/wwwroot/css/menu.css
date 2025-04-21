@@ -1,0 +1,22 @@
+﻿
+
+
+    .top-menu1 {
+        background-color: dimgray;
+        padding: 10px;
+        display: flex;
+        justify-content: center; /* Centrere indholdet horisontalt */
+    }
+
+    .top-menu1-content {
+        display: flex;
+        gap: 30px; /* afstand mellem links */
+        align-items: center;
+    }
+
+    .top-menu1-content a {
+        text-decoration: none;
+        color: ghostwhite;
+        font-family: 'Agency FB';
+        font-size: 21px;
+    }

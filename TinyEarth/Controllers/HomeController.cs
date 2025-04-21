@@ -18,10 +18,28 @@ namespace TinyEarth.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Rules()
         {
             return View();
         }
+        public IActionResult Media()
+        {
+            return View();
+        }
+        public IActionResult Safety()
+        {
+            return View();
+        }
+        public IActionResult Vote()
+        {
+            return View();
+        }
+
+        public IActionResult Home()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

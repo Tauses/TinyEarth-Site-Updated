@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>TinyEarth - Safety</title>
+    <script src="~/js/help.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body onload="pageLoad()">
+    <nav id="navbar">
+        <div class="nav_title">
+            <div class="title">
+                <img src="images/main_logo.png" alt="">
+                <a href="index.html">TinyEarth</a>
+            </div>
+            <p class="help_text">Help Center</p>
+        </div>
+        <ul>
+            <li><a asp-controller="Home" asp-action="Rules">Rules</a></li>
+            <li class="selected_nav_page"><a asp-action="Safety">Safety</a></li>
+            <li><a asp-controller="Home" asp-action="Vote">Vote</a></li>
+            <li><a asp-controller="Home" asp-action="Media">Media</a></li>
+        </ul>
+    </nav>
+    <button class="nav_button" id="nav_button" onclick="toggleNav()">
+        <img src="images/arrow-collapse.png" alt="">
+    </button>
+    <main class="home_help" id="home_help">
+        <div class="home_rule rule_big no_border">
+            <p class="home_header_large">Safety</p>
+            <p class="home_text">
+                We advise all of our players to follow these internet safety tips.
+            </p>
+        </div>
+
+        <div class="home_rule">
+            <p class="home_header">Safety Tips</p>
+            <ul>
+                <li><p><span class="bold">1.</span> If a player asks you to join their server, you should be cautious and use a VPN to disguise your IP.</p></li>
+                <li><p><span class="bold">2.</span> Never click on a link from someone you don't know or trust.</p></li>
+                <li>
+                    <p>
+                        <span class="bold">3.</span> If someone is threatening to doxx or ddos you, contact the TinyEarth Staff team in a ticket.<br>
+                        Assess the situation before hand and think about how realistic it is for someone to ddos you.<br>
+                        The best thing you can do if someone is threatening you, stop the interaction and to not listen to what they say. Report them to discord and then block them.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <span class="bold">4.</span> Don't reveal your personal information in global chats or to someone you just met on the server.<br>
+                        TinyEarth Staff will never ask for any of your personal information.<br>
+                        Some malicious users may use your personal information to scare you into following their demands, the best thing to do here is to assess the situation and if it poses a real threat, stop the interaction and contact the TinyEarth Staff.
+                    </p>
+                </li>
+                <li><p><span class="bold">5.</span> Be wary of friend requests if you don't share any friends or mutual servers.</p></li>
+                <li>
+                    <p>
+                        <span class="bold">6.</span> Don't download any files from an unfamiliar website, you can google the domain name before downloading and make sure it is reputable.
+                        TinyEarth staff will never tell you to download anything.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
