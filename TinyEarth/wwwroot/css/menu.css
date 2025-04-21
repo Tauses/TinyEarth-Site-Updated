@@ -1,22 +1,46 @@
-﻿
+﻿body {
+    margin: 0;
+    background-color: #1e1e26;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
 
+.top-menu {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #1e1e26;
+}
 
-    .top-menu1 {
-        background-color: dimgray;
-        padding: 10px;
-        display: flex;
-        justify-content: center; /* Centrere indholdet horisontalt */
-    }
+.menu-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
 
-    .top-menu1-content {
-        display: flex;
-        gap: 30px; /* afstand mellem links */
-        align-items: center;
-    }
-
-    .top-menu1-content a {
+    .menu-content a {
+        color: #FFD700;
         text-decoration: none;
-        color: ghostwhite;
-        font-family: 'Agency FB';
-        font-size: 21px;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
     }
+
+        .menu-content a:hover {
+            color: #ffffff;
+        }
+
+.store-button {
+    background-color: #FFD700;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+    .store-button:hover {
+        background-color: #FFC300;
+        color: #ffffff;
+    }
+
