@@ -19,14 +19,15 @@
             <a asp-controller="Home" asp-action="Home">HOME</a>
             <a asp-controller="Home" asp-action="Media">MEDIA</a>
             <a asp-controller="Home" asp-action="Vote">VOTE</a>
-            <a class="top-menu store-button" asp-controller="Store" asp-action="Index">STORE</a>
+            <!--<a class="top-menu store-button" asp-controller="Store" asp-action="Index">STORE</a>-->
+            <a href="https://shop.tiny-earth.com/" class="top-menu store-button">STORE</a>
             <a asp-controller="Home" asp-action="Rules">RULES</a>
 
             <!-- DROPDOWN -->
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown()">MORE ▼</button>
                 <div id="dropdown-content" class="dropdown-content">
-                    <a asp-controller="Home" asp-action="Stats">Stats</a>
+                    <a asp-controller="Stats" asp-action="Stats">Stats</a>
                     <a asp-controller="Home" asp-action="Safety">Safety</a>
                 </div>
             </div>

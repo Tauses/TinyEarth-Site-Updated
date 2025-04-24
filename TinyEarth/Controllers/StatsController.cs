@@ -2,9 +2,9 @@
 
 namespace TinyEarth.Controllers
 {
-    public class Store : Controller
+    public class StatsController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Stats()
         {
             return View();
         }
