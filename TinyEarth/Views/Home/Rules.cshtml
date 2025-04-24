@@ -15,24 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body onload="pageLoad()">
-    <nav id="navbar">
-        <div class="nav_title">
-            <div class="title">
-                <img src="images/main_logo.png" alt="">
-                <a href="index.html">TinyEarth</a>
-            </div>
-            <p class="help_text">Help Center</p>
-        </div>
-        <ul>
-            <li class="selected_nav_page"><a asp-action="Rules">Rules</a></li>
-            <li><a asp-controller="Home" asp-action="Safety">Safety</a></li>
-            <li><a asp-controller="Home" asp-action="Vote">Vote</a></li>
-            <li><a asp-controller="Home" asp-action="Media">Media</a></li>
-        </ul>
-    </nav>
-    <button class="nav_button" id="nav_button" onclick="toggleNav()">
-        <img src="images/arrow-collapse.png" alt="">
-    </button>
+
+
     <main class="home_help" id="home_help">
         <div class="home_rule rule_big">
             <p class="home_header_large">Rules</p>
