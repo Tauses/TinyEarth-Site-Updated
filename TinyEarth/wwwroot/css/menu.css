@@ -28,15 +28,19 @@
 
         .menu-content a:hover {
             color: #ffffff;
+            border-radius: 80px;
+            transition: all 0.3s ease-in-out;
+            background-color: darkgray;
         }
 
-.store-button {
+.top-menu .store-button {
     background-color: #FFD700;
-    color: black;
+    color: white;
     padding: 10px 25px;
     border-radius: 30px;
     font-weight: bold;
     transition: all 0.3s ease;
+    font-size: 18px;
 }
 
     .store-button:hover {
