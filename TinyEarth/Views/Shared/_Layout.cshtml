@@ -18,17 +18,20 @@
         <nav class="menu-content">
             <a asp-controller="Home" asp-action="Home">HOME</a>
             <a asp-controller="Home" asp-action="Media">MEDIA</a>
-            <a asp-controller="Home" asp-action="Vote">VOTE</a>
+            <a asp-controller="Home" asp-action="Vote">SERVERS</a>
             <!--<a class="top-menu store-button" asp-controller="Store" asp-action="Index">STORE</a>-->
             <a href="https://shop.tiny-earth.com/" class="top-menu store-button">STORE</a>
+            <a asp-controller="Stats" asp-action="Stats">STATS</a>
             <a asp-controller="Home" asp-action="Rules">RULES</a>
 
             <!-- DROPDOWN -->
             <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()">MORE ▼</button>
+                <button class="dropbtn">MORE ▼</button>
                 <div id="dropdown-content" class="dropdown-content">
                     <a asp-controller="Stats" asp-action="Stats">Stats</a>
                     <a asp-controller="Home" asp-action="Safety">Safety</a>
+                    <a asp-controller="Servers" asp-action="ServerTowny">Towny</a>
+                    <a asp-controller="Servers" asp-action="ServerPrison">Prison</a>
                 </div>
             </div>
         </nav>

@@ -4,36 +4,39 @@
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
+/* BRUG RESPONSIVE ENHEDER */
 .top-menu {
     display: flex;
     justify-content: center;
     padding: 2% 0%;
-    border-radius: 30px 30px;
+    border-radius: 2rem;
     background-color: #1e1e26;
     opacity: 90%;
+    max-width: fit-content;
+    margin: 0 auto;
 }
 
 .menu-content {
     display: flex;
-    gap: 30px;
+    gap: 2rem; /* afstand mellem links */
     align-items: center;
-    border-radius: 30px;
+    border-radius: 2rem;
+    padding-inline: 1.5rem; /* ekstra luft på siderne fra ydre menu items */
 }
 
     .menu-content a {
         color: #FFD700;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: bold;
-        letter-spacing: 1px;
+        letter-spacing: 0.06em;
         transition: all 0.3s ease;
     }
 
         .menu-content a:hover {
             color: #ffffff;
-            border-radius: 30px;
-            padding: 10px 10px;
-            transition: all 0.3s ease-in-out;
+            border-radius: 2rem;
+            padding: 0.5rem;
             background-color: dimgray;
         }
 
@@ -47,7 +50,8 @@
     font-size: 18px;
 }
 
-.store-button:hover {
+
+.menu-content .store-button:hover {
     background-color: #FFD700;
     padding: 10px 25px;
     color: #ffffff;
