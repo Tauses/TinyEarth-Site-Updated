@@ -15,3 +15,45 @@ body {
 .div2 {
     grid-row: span 3 / span 3;
 }
+
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "playercounter menu discord"
+        "content mainContent content";
+    grid-template-columns: 200px 1fr 200px;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.playercounter {
+    grid-area: playercounter;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.discord {
+    grid-area: discord;
+}
+
+.content {
+    grid-area: content;
+}
+
+.mainContent {
+    grid-area: mainContent;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+            "menu"
+            "playercounter"
+            "discord"
+            "content";
+        grid-template-columns: 1fr;
+    }
+}

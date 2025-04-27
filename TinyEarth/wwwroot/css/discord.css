@@ -1,17 +1,42 @@
 ﻿
 
 
-.discord-body {
-    background-color: green;
+
+
+
+
+
+.discord {
+    background-color: #284dcb;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.discord-content {
-    background-color: cyan;
-    display: flex;
-    font-size: 16px;
+    .discord:hover {
+        background-color: #4f64ad;
+    }
+
+.discord-widget {
+    position: relative;
+    width: 100%;
+    padding-top: 140%; /* Juster højden - 140% passer nogenlunde til Discord */
+    max-width: 400px; /* Maks størrelse på store skærme */
+    margin: 0 auto; /* Centrer */
 }
 
-
-
+    .discord-widget iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+    }
 
         
