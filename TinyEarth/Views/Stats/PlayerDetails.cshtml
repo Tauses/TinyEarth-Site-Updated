@@ -3,9 +3,10 @@
 <h2>Player Details</h2>
 
 <table>
-    <tr><th>Name</th><td>@Model.NameHtml</td></tr>
-    <tr><th>Session Count</th><td>@Model.Sessions</td></tr>
-    <tr><th>Kills</th><td>   </td></tr>
+    <tr><th>Name</th><td style="color:azure" >@Model.PlainName</td></tr>
+    <tr><th>Session Count</th><td style="color:azure">@Model.Sessions</td></tr>
+    <tr><th>Kills</th></tr>
+    <tr><th>Mob Kills</th></tr>
 </table>
 
 <a href="@Url.Action("Index", "Stats")">← Back to Search</a>
