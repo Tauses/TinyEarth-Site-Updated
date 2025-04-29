@@ -1,3 +1,6 @@
+using System.Net;
+using TinyEarth.Models;
+
 namespace TinyEarth
 {
     public class Program
@@ -8,6 +11,17 @@ namespace TinyEarth
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //builder.Services.AddHttpClient<PlanService>();
+
+            builder.Services.AddHttpClient<PlanService>(client =>
+            {
+                client.BaseAddress = new Uri("http://plan.tiny-earth.com:25569/");
+            }).ConfigurePrimaryHttpMessageHandler(() =>
+                new HttpClientHandler
+                {
+                    AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+                });
+
 
             var app = builder.Build();
 

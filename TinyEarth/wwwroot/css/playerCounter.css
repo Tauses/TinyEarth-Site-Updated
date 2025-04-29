@@ -1,0 +1,31 @@
+﻿
+
+.playerCounter {
+    background-color: #1e1e26;
+    display: flex;
+    border-radius: 2rem;
+    gap: 20px;
+    align-content: center;
+    justify-content: left;
+    align-items: center;
+}
+
+#mc-status {
+    font-weight: bold;
+    color: #FFD700;
+    gap: 2rem;
+
+}
+
+.copy-ip {
+    font-size: 14px;
+    color: #999; /* Lys grå farve for COPY IP teksten */
+    cursor: pointer; /* Gør teksten klikbar */
+}
+
+.ip-address {
+    font-size: 16px;
+    font-weight: bold; /* Gør IP-adressen fed */
+    color: white; /* Mørk farve for IP */
+    cursor: pointer; /* Gør IP'en klikbar */
+}
