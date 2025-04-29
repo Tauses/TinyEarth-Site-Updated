@@ -1,60 +1,43 @@
-﻿using System.Text.Json.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Net;
+using TinyEarth.Models;
 
 namespace TinyEarth.Models
 {
     public class PlanService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _planApiUrl = "http://plan.tiny-earth.com:25569/docs"; // skift denne
 
         public PlanService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
 
-        // FETCH PLAYERNAME CONVERTS FROM UUID
-        public async Task<Guid?> FetchUUIDOfAsync(string playerName)
+        public async Task<List<PlayerData>> GetPlayersAsync()
         {
-            var response = await _httpClient.GetAsync($"{_planApiUrl}/uuid/{playerName}");
-            if (!response.IsSuccessStatusCode) return null;
+            var response = await _httpClient.GetAsync("/v1/players");
+            response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync();
-            var uuid = JsonConvert.DeserializeObject<Guid>(content);
-            return uuid;
+            var json = await response.Content.ReadAsStringAsync();
+            var wrapper = JsonConvert.DeserializeObject<PlayerResponse>(json);
+
+            return wrapper?.Data ?? new List<PlayerData>();
         }
 
-        // FETCH PLAYTIME BASED ON UUID
-        public async Task<long> FetchPlaytimeAsync(Guid playerUUID, Guid serverUUID, long after, long before)
+        public async Task<PlayerData?> SearchPlayerByNameAsync(string playerName)
         {
-            var response = await _httpClient.GetAsync($"{_planApiUrl}/playtime/{playerUUID}/{serverUUID}?after={after}&before={before}");
-            if (!response.IsSuccessStatusCode) return 0;
+            var response = await _httpClient.GetAsync("/v1/players");
+            response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync();
-            var playtime = JsonConvert.DeserializeObject<long>(content);
-            return playtime;
+            var json = await response.Content.ReadAsStringAsync();
+            var wrapper = JsonConvert.DeserializeObject<PlayerResponse>(json);
+
+            if (wrapper?.Data == null)
+                return null;
+
+            return wrapper.Data
+                .FirstOrDefault(p => string.Equals(p.PlainName, playerName, StringComparison.OrdinalIgnoreCase));
         }
 
-        // FETCH LAST SEEN BASED ON UUID
-        public async Task<long> FetchLastSeenAsync(Guid playerUUID, Guid serverUUID)
-        {
-            var response = await _httpClient.GetAsync($"{_planApiUrl}/lastseen/{playerUUID}/{serverUUID}");
-            if (!response.IsSuccessStatusCode) return 0;
-
-            var content = await response.Content.ReadAsStringAsync();
-            var lastSeen = JsonConvert.DeserializeObject<long>(content);
-            return lastSeen;
-        }
-
-        // FETCH PLAYTIME BASED ON UUID
-        public async Task<double> FetchActivityIndexAsync(Guid playerUUID, long epochMs)
-        {
-            var response = await _httpClient.GetAsync($"{_planApiUrl}/activityindex/{playerUUID}?epochMs={epochMs}");
-            if (!response.IsSuccessStatusCode) return 0;
-
-            var content = await response.Content.ReadAsStringAsync();
-            var activityIndex = JsonConvert.DeserializeObject<double>(content);
-            return activityIndex;
-        }
     }
 }

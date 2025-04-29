@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCoreGeneratedDocument;
+using Microsoft.AspNetCore.Mvc;
 using TinyEarth.Models;
 
 namespace TinyEarth.Controllers
@@ -6,48 +7,37 @@ namespace TinyEarth.Controllers
     public class StatsController : Controller
     {
         private readonly PlanService _planService;
-        private readonly Guid _serverUUID = Guid.Parse("499ae95b-46e3-4652-abbb-122f60c45ce4");
 
         public StatsController(PlanService planService)
         {
             _planService = planService;
         }
 
-        [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var players = await _planService.GetPlayersAsync();
+            return View(players);
         }
 
-        // GETS PLAYER FROM SEARCH INPUT
         [HttpPost]
         public async Task<IActionResult> SearchPlayer(string playerName)
         {
-            var playerUUID = await _planService.FetchUUIDOfAsync(playerName);
-            if (playerUUID == null)
+            if (string.IsNullOrWhiteSpace(playerName))
             {
-                ViewBag.ErrorMessage = "Player not found.";
+                ViewBag.ErrorMessage = "Please enter a valid player name.";
                 return View("Index");
             }
 
-            var now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            var weekAgo = now - (7L * 24 * 60 * 60 * 1000); // 7 dage bagud
+            var player = await _planService.SearchPlayerByNameAsync(playerName);
 
-            var playtime = await _planService.FetchPlaytimeAsync(playerUUID.Value, _serverUUID, weekAgo, now);
-            var lastSeen = await _planService.FetchLastSeenAsync(playerUUID.Value, _serverUUID);
-            var activityIndex = await _planService.FetchActivityIndexAsync(playerUUID.Value, now);
-
-            var model = new PlayerStatsViewModel
+            if (player == null)
             {
-                PlayerName = playerName,
-                PlayerUUID = playerUUID.Value,
-                Playtime = playtime,
-                LastSeen = lastSeen,
-                ActivityIndex = activityIndex
-            };
+                ViewBag.ErrorMessage = $"Player '{playerName}' not found.";
+                return View("Index");
+            }
 
-            return View("PlayerStats", model);
+            // Du kan lave en ny viewmodel senere, men for nu:
+            return View("PlayerDetails", player);
         }
-
     }
 }
