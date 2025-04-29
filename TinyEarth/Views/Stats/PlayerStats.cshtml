@@ -1,0 +1,10 @@
+﻿@model TinyEarth.Models.PlayerStatsViewModel
+
+<h1>Stats for @Model.PlayerName</h1>
+
+<ul>
+    <li><strong>UUID:</strong> @Model.PlayerUUID</li>
+    <li><strong>Playtime last 7 days:</strong> @(Model.Playtime / 1000 / 60) minutes</li>
+    <li><strong>Last Seen:</strong> @DateTimeOffset.FromUnixTimeMilliseconds(Model.LastSeen).ToLocalTime()</li>
+    <li><strong>Activity Index:</strong> @Model.ActivityIndex</li>
+</ul>

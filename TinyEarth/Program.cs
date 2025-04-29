@@ -1,3 +1,5 @@
+using TinyEarth.Models;
+
 namespace TinyEarth
 {
     public class Program
@@ -8,6 +10,8 @@ namespace TinyEarth
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddHttpClient<PlanService>();
+
 
             var app = builder.Build();
 

@@ -2,7 +2,7 @@
     const statusElement = document.getElementById("player-stats");
 
     try {
-        const res = await fetch(`http://plan.tiny-earth.com:25569/api/players/${playerName}/stats`);
+        const res = await fetch(`http://plan.tiny-earth.com:25569/docs/players/${playerName}/stats`);
         if (!res.ok) {
             throw new Error("Spillerdata kunne ikke hentes.");
         }
