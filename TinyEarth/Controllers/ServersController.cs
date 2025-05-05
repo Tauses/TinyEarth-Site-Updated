@@ -2,7 +2,7 @@
 
 namespace TinyEarth.Controllers
 {
-    public class Servers : Controller
+    public class ServersController : Controller
     {
         public IActionResult Index()
         {
