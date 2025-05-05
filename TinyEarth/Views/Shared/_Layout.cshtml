@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] TinyEarth</title>
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/menu.css" />
     <link rel="stylesheet" href="~/css/home.css" />
     <link rel="stylesheet" href="~/css/dropdown.css" />
+    <link rel="stylesheet" href="~/css/menu.css" />
     <script defer src="~/js/dropdown.js"></script>
 
 </head>
-<body>
+<body class="@ViewData["BodyClass"]">
 
     <!--MENU-->
     <div class="top-menu">
@@ -20,7 +20,7 @@
             <a asp-controller="Home" asp-action="Media">MEDIA</a>
             <a asp-controller="Servers" asp-action="Index">SERVERS</a>
             <!--<a class="top-menu store-button" asp-controller="Store" asp-action="Index">STORE</a>-->
-            <a href="https://shop.tiny-earth.com/" class="top-menu store-button">STORE</a>
+            <a href="https://shop.tiny-earth.com/" class="store-button">STORE</a>
             <a asp-controller="Stats" asp-action="Index">STATS</a>
             <a asp-controller="Home" asp-action="Rules">RULES</a>
 

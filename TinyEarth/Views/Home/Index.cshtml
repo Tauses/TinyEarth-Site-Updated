@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewData["BodyClass"] = "home-page";
+    ViewData["Title"] = "Home";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,16 +20,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS FILES -->
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/discord.css" />
-    <link rel="stylesheet" href="~/css/playerCounter.css" />
+    <link rel="stylesheet" href="~/css/Home/site.css" />
+    <link rel="stylesheet" href="~/css/Discord/discord.css" />
+    <link rel="stylesheet" href="~/css/Stats/playerCounter.css" />
+    <link rel="stylesheet" href="~/css/Home/home.css" />
 
     <!-- JS FILES -->
     <script defer src="~/js/pingScript.js"></script>
 
 </head>
 
-<body onload="pageLoad()">
+<body onload="pageLoad()" class="home-page">
+
 
     <div class="grid-container">
 
@@ -34,22 +41,51 @@
             <div id="mc-status"></div>
         </div>
 
-        <div class="discord">
-            <div class="discord-widget">
-            <a href="https://discord.gg/AadcBKckG4" target="_blank">
-                <img src="~/images/main_logo.png" height="64px" width="64px" alt="DISCORD INVITE">
-                <img src="~/images/discordlogo.png" height="64px" width="64px">
-            </a>
+        <!-- DISCORD WIDGET SECTION -->
+        <section class="discord-info">
+            <div class="discord">
+                <div class="discord-widget">
+                    <a href="https://discord.gg/AadcBKckG4" target="_blank">
+                        <img src="~/images/main_logo.png" height="64px" width="64px" alt="DISCORD INVITE">
+                        <img src="~/images/discordlogo.png" height="64px" width="64px">
+                    </a>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="content">
-            3 TEST
+        <!-- MAIN LOGO SECTION -->
+        <section class="main-logo">
+            <img src="~/images/main_logo.png" height="64px" width="64px" alt="mainlogo" />
+        </section>
+
+        <!-- MAIN CONTENT SECTION -->
+        <section class="main-content">
+            <div class="main-details">
+                <p>MAIN CONTENT</p>
             </div>
 
-            <div class="mainContent"> 
-                TEST 4
+        </section>
+
+        <!-- PLAY NOW + IP SECTION -->
+        <section class="playnow-info-home">
+            <div class="playnow-details">
+                <button>PLAY NOW</button>
+
             </div>
+
+        </section>
+
+        <!-- LEADERBOARDS SECTION -->
+        <section class="leaderboard-info">
+
+            <div class="leaderboard-details">
+                LEADERBOARDS
+            </div>
+
+        </section>
+
+
+
     </div>
 
 </body>
